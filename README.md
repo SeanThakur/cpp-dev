@@ -1,1 +1,3 @@
 # cpp-dev
+
+CMake setup
