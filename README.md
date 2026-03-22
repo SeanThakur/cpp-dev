@@ -10,6 +10,10 @@ cmake --build build
 Run command
 g++ src/yourfile.cpp && ./a.out
 
+Use this for memory tracker app
+g++ -fsized-deallocation src/memory_tracker.cpp && ./a.out
+-fsized-deallocation --> this is used to tell the os to use our custom delete operator
+
 if you just want to run main.cpp then run in your termainal
 ./run.sh
 
