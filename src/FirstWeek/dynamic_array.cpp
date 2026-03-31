@@ -4,7 +4,6 @@ int main()
 {
     int userSize;
     std::cout << "Add the size of the array: ";
-    ;
     std::cin >> userSize;
 
     int *dynamicArray = new int[userSize];
