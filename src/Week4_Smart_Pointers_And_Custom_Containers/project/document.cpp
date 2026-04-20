@@ -26,6 +26,11 @@ void printDocumet(const Document *doc)
     }
 }
 
+void shredDocument(std::unique_ptr<Document> doc)
+{
+    std::cout << "--> Shredding the document... " << doc->name << "\n";
+}
+
 class Vault
 {
 private:
@@ -50,6 +55,17 @@ public:
             printDocumet(archives[i].get());
         }
     }
+
+    std::unique_ptr<Document> extractLastDocument()
+    {
+        if (archives.empty())
+        {
+            return nullptr;
+        }
+        std::unique_ptr<Document> stolenDoc = std::move(archives.back());
+        archives.pop_back();
+        return stolenDoc;
+    }
 };
 
 int main()
@@ -64,8 +80,14 @@ int main()
     v1.storedDocumetn(std::move(doc2));
     v1.storedDocumetn(std::move(doc3));
 
+    std::cout << "--- Executing Heist --- \n";
+    std::unique_ptr<Document> stolenDoc = v1.extractLastDocument();
+
     std::cout << "--- Inspecting all documents --- \n";
     v1.inspectAll();
+
+    std::cout << "--- Check Value after Heist --- \n";
+    shredDocument(std::move(stolenDoc));
 
     std::cout << "--- Calling emptyVault() --- \n";
     v1.emptyVault();
