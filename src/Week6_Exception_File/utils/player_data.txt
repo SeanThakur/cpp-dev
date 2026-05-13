@@ -1,0 +1,3 @@
+PlayerName: Sean
+Level: 99
+Gold: 5000
