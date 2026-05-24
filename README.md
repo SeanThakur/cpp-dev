@@ -9,6 +9,7 @@ cmake --build build
 
 Run command
 g++ src/yourfile.cpp && ./a.out
+g++ -std=c++20 src/yourfile.cpp && ./a.out
 
 Use this for memory tracker app
 g++ -fsized-deallocation src/memory_tracker.cpp && ./a.out
