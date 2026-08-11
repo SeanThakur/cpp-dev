@@ -10,6 +10,8 @@ cmake --build build
 Run command
 g++ src/yourfile.cpp && ./a.out
 g++ -std=c++20 src/yourfile.cpp && ./a.out
+-O3 is used to optimize the code for speed, but it will take longer to compile
+g++ -std=c++20 -O3 src/yourfile.cpp && ./a.out
 
 Use this for memory tracker app
 g++ -fsized-deallocation src/memory_tracker.cpp && ./a.out
